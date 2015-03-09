@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAXEMPS 10
+
 struct Employee {
   char last[16];
   char first[11];
@@ -18,37 +20,34 @@ struct Employee {
 };
 
 int main() {
-  int num;
+  struct Employee employee[MAXEMPS];
+  int n,i;
   
-  puts("how many employees are there?");
-  scanf("%d", &num);
+  //puts("how many employees are there?");
+  //scanf("%d", &num);
 
-  struct Employee employee[num];
-
-  int emp;
-  for (emp = 0; emp < num; emp++){
-    puts("Next employee:\n");
-    printf("last name:"); fflush(stdout);
-    getline(employee[emp].last);
-    if (strlen(employee[emp].last) == 0){
+  for (n = 0; n < MAXEMPS; ++n){
+    //printf("Next employee:\n");
+    printf("last name: "); fflush(stdout);
+    gets(employee[n].last);
+    if (strlen(employee[n].last) == 0){
       break;
     }
-    printf("first name:");fflush(stdout);
-    getline(employee[emp].first); // not understanding getline params
-    printf("title:");fflush(stdout); 
-    getline(employee[emp].title);
-    printf("salary:"); fflush(stdout);
-    scanf("%d", &employee[emp].salary);
+    printf("first name: "); fflush(stdout);
+    gets(employee[n].first); // not understanding getline params
+    printf("title: "); fflush(stdout); 
+    gets(employee[n].title);
+    printf("salary: "); fflush(stdout);
+    scanf("%d", &employee[n].salary);
     getchar(); // remove newline
   }
 
-  int item;
-  for (item; item < len(employee); item++){
+  for (i= 0; i < n; ++i){
     printf("{%s,%s,%s,%d}\n",
-	   employee[item].last,
-	   employee[item].first,
-	   employee[item].title,
-	   employee[item].salary);
+	   employee[i].last,
+	   employee[i].first,
+	   employee[i].title,
+	   employee[i].salary);
   }
 
   printf("End of program.\n");
