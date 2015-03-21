@@ -1,4 +1,5 @@
-/* INPUT: Function f, endpoint values a, b, tolerance TOL, maximum iterations NMAX
+/* INPUT: Function f, endpoint values a, b, tolerance TOL, 
+maximum iterations NMAX
 CONDITIONS: a < b, either f(a) < 0 and f(b) > 0 or f(a) > 0 and f(b) < 0
 OUTPUT: value which differs from a root of f(x)=0 by less than TOL
  
@@ -17,6 +18,7 @@ Output("Method failed.") # max number of steps exceeded
 
 
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 
 #define DEBUG 1
@@ -48,26 +50,12 @@ double find_root_by_bisection (
     printf("f(%1f) == %1f, f(%1f) == %1f\n",
 	   x1, vx1, x2, vx2);
 #endif
-    if (abs(vnew) < TOL) break;
-    if ((vx1 < 0) && (vx2 > 0)){
-      if (vnew < 0){
-	x1 = xnew;
-      }
-      else{
-	x2 = xnew;
-      }
-    }
-    else {
-      if (xnew < 0){
-	x2 = xnew;
-      }
-      else{
-	x1 = xnew;
-      }
-    }
-    
+    if (fabs(vnew) < TOL) break;
+    if (sign(vnew) == sign(vx1)) x1 = xnew;
+    else x2 = xnew;
+				  
   }
-  
+ 
   return (x1 + x2)/ 2.0;
 }
 
