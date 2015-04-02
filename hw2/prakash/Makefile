@@ -3,8 +3,8 @@ BOOST = /home/tbonza/opensource/cplusplus/library/boost_1_57_0/
 CC = g++
 CFLAGS = -g -Wall -std=c++11
 CFLAGS += -I $(BOOST)
-CFLAGS += -lboost_system
-CFLAGS += -lboost_thread
+#CFLAGS += -lboost_system
+#CFLAGS += -lboost_thread
 
 all: TestBoost TestThread
 
