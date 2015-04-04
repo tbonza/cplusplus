@@ -7,6 +7,6 @@ clean:
 	rm IceCreamFactory
 
 IceCreamFactory: IceCreamFactory.cpp
-	$(CC) $(CFLAGS) -c IceCreamFactory.cpp -o IceCreamFactory
+	$(CC) $(CFLAGS) IceCreamFactory.cpp -o IceCreamFactory
 
 

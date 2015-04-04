@@ -2,9 +2,7 @@
 
 class IceCreamFactory {
 public:
-  IceCreamFactory(); // default
-  // IceCreamFactory() = default; // will create an empty default
-  // constructor.
+  IceCreamFactory();
   IceCreamFactory(int nLines);
 private:
   int num_assembly_lines_;
