@@ -3,5 +3,5 @@ TaskList:
 1. Exit after help message. (Tyler)
 2. Lock database directory when started. (Chris)
 3. Create a test client that just requests new id (Prakash)
-4. Create server code to create a new focustack id when requested (Suraj).
+4. Create server code to create a new focustack id when requested (Suraj)
 

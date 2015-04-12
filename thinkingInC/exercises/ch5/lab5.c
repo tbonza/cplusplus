@@ -26,7 +26,7 @@ int main() {
   //puts("how many employees are there?");
   //scanf("%d", &num);
 
-  for (n = 0; n < MAXEMPS; ++n){
+  for (n = 0; n < MAXEMP; ++n){
     //printf("Next employee:\n");
     printf("last name: "); fflush(stdout);
     gets(employee[n].last);
